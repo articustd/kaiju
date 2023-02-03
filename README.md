@@ -1,11 +1,11 @@
-# Bigger is Better
-Bigger is Better (BiB) is an 18+ furry Twine RPG
+# Bigger Better Kaiju
+Bigger Better Kaiju (B2K) is an 18+ furry Twine RPG
 ## ⚠️ WARNING ⚠️
 This repo contains adult and furry content. Proceeding into this repo you are confirming you are the appropriate age to be consuming this content. All characters in this work of fiction are 18+
 
 ## Running
 ### Prerequisites
-Bigger is Better supports Windows, Linux, and MacOS. To build, you will need the following tools:
+Bigger Better Kaiju supports Windows, Linux, and MacOS. To build, you will need the following tools:
 - NodeJS
 
 It is recommended to also have the following installed to make development smoother:

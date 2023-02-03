@@ -1,0 +1,15 @@
+:: StoryTitle
+Bigger Better Kaiju
+
+
+:: StoryData {"position":"0,125"}
+{
+	"ifid": "FB50C852-0228-4082-9405-B7E4A5F426D7",
+	"format": "SugarCube",
+	"format-version": "2.34.1",
+	"start": "start",
+	"zoom": 1
+}
+
+
+:: StoryInit {"position":"25,425","size":"100,100"}

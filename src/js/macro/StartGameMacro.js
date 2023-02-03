@@ -1,21 +1,16 @@
 import { species, measurements, genders } from '@js/data'
 import { getPronounId } from '@controller/character/PronounController'
 import { Character } from '@js/objects/Character'
+import { logger } from '@util/Logging'
 
 Macro.add('startGameRoutine', {
     skipArgs: true,
     handler: function () {
-        let {species: speciesName, size: sizeName, pronouns, gender: genderName, name} = variables().player;
-        let pronoun = getPronounId(pronouns)
+        logger('WHAT IS UP MY FELLOW CONSOLE LOGS')
 
         variables().player = new Character({
-            baseStat: 15,
-            speciesName,
-            sizeName,
-            bodyTypeName: 'Normal',
-            genderName,
-            pronoun,
-            name,
+            defaultStat: 5,
+            name: variables().player.name,
             isPlayer: true
         })
     }

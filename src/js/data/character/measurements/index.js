@@ -1,1 +1,0 @@
-export { ballSize, bodyTypes, breastSize, fatAmount, muscleAmount, penisSize, sizes } from './MeasurementTable'

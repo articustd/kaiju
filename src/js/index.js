@@ -10,7 +10,7 @@ Config = {
 	...Config,
 	...storyConfig,
 	saves: {
-		id: 'big',
+		id: 'kaiju',
 		autoload: checkAutoload(),
 		autosave: true,
 		slots: 8,
@@ -21,26 +21,16 @@ setup.ImagePath = "assets/";
 
 ((Config, State, Story, Engine, Dialog, $document) => {
 	$(document.head).append('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">')
-	let version = `v0.10.0`
+	let version = `Pre-Alpha`
 	// Set State Variables
 	variables().version = version
-	variables().stores = stores;
-	variables().time = { day: 1, hour: 0, min: 0 }
 	variables().debug = storyConfig.debug
 	variables().settings = settings
-	// Register custom SugarCube macros
-	// registerAlert(Macro, Dialog);
-
-	// Register plugin modules
-	// registerTitleMatchProperties({ State, Story, $document });
-
-	// Register components
-	// registerHeader($document);
 
 	// Config loading
 	Save.onLoad.add(function (save) {
 		logger('Loading...')
-		loadGameData(save, version)
+		// loadGameData(save, version)
 	})
 
 	// Config saving

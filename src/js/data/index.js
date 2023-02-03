@@ -1,7 +1,3 @@
-//Item Tables
-export * as items from './ItemTable.json'
-export * from './StoreTable.js'
-
 //Combat Tables
 export * from './combat'
 

@@ -1,7 +1,7 @@
 {
-  "name": "big",
+  "name": "kaiju",
   "version": "1.0.0",
-  "description": "Bigger is Better Twine Game",
+  "description": "Bigger Better Kaiju Twine Game",
   "main": "index.js",
   "scripts": {
     "build": "gulp build",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/articustd/big.git"
+    "url": "git+https://github.com/articustd/kaiju.git"
   },
   "keywords": [
     "twine"
@@ -26,9 +26,9 @@
   "author": "ArticusTD",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/articustd/big/issues"
+    "url": "https://github.com/articustd/kaiju/issues"
   },
-  "homepage": "https://github.com/articustd/big#readme",
+  "homepage": "https://github.com/articustd/kaiju#readme",
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/plugin-external-helpers": "^7.16.7",
