@@ -3,6 +3,12 @@ Bigger Better Kaiju (B2K) is an 18+ furry Twine RPG
 ## ⚠️ WARNING ⚠️
 This repo contains adult and furry content. Proceeding into this repo you are confirming you are the appropriate age to be consuming this content. All characters in this work of fiction are 18+
 
+## FOR DEVELOPMENT
+Go through the normal Install steps down below. In addition to that though it is highly advisable to globally install gulp.
+
+### Normal Development Cycle
+With Gulp installed globally you can run `gulp` in the root `kaiju` folder to start the game locally with all development features turned on.
+
 ## Running
 ### Prerequisites
 Bigger Better Kaiju supports Windows, Linux, and MacOS. To build, you will need the following tools:
