@@ -3,17 +3,17 @@ import _ from "lodash"
 import { attackSkill, genders, loot, measurements, species } from "@js/data"
 
 export class Character {
-    constructor(data, load) {
-        if (load) {
-            this.load(load)
-            return
-        }
+    _dnaPoints = 0
+    _isPlayer = false
+    _parts = { head: {}, torso: {}, leg: {}, arm: {}, tail: {} }
 
-        logger(this)
+    constructor(data, load) {
         _.each(data, (val, key) => {
-            this[`_${key}`] = val
+            this[`${key}`] = val
         })
-        logger(this)
+
+        if (load)
+            return
 
         // Stats
         // Size
@@ -30,16 +30,15 @@ export class Character {
 
         this.setParts()
         this.calcStats()
-        this.calcMaxHealth()
-        this.stats.health = this.stats.maxHealth
-
-        // this.calcGenitals()
-        if(!this._dnaPoints)
-            this._dnaPoints = 0
+        this.healthReset() // Does everything for health setting
+        this.lustReset() // Does everything for lust setting
     }
 
     get dnaPoints() { return this._dnaPoints }
     set dnaPoints(dnaPoints) { this._dnaPoints = dnaPoints }
+
+    get isPlayer() { return this._isPlayer }
+    set isPlayer(isPlayer) { this._isPlayer = isPlayer }
 
     get name() { return this._name }
     set name(name) { this._name = name }
@@ -55,13 +54,18 @@ export class Character {
         this.stats.maxHealth = hB
     }
 
+    calcMaxLust() {
+        let mL = Math.ceil(this.stats.size + this.stats.allure)
+        this.stats.maxLust = mL
+    }
+
     calcStats() {
         if (this._stats)
             return
 
-        if (this._defaultStat) {
-            this.stats = { size: this._baseStat, strength: this._baseStat, defense: this._baseStat, allure: this._baseStat }
-            delete this._defaultStat
+        if (this.defaultStat) {
+            this.stats = { size: this.defaultStat, strength: this.defaultStat, defense: this.defaultStat, allure: this.defaultStat }
+            delete this.defaultStat
             return
         }
 
@@ -70,25 +74,19 @@ export class Character {
 
     setParts() {
         // TODO Once combat is working this needs to be in place
-        if (this._parts)
-            return
-
-        this._parts = {head: {}, torso: {}, leg: {}, arm: {}, tail: {}}
     }
-    
+
     isAlive() {
         return this.stats.health > 0
     }
-    
-    rest() {
+
+    healthReset() {
         this.calcMaxHealth()
         this.stats.health = this.stats.maxHealth
     }
-    
-        load(data) {
-            _.each(data, (val, key) => {
-                logger({ key, val })
-                this[key] = val
-            })
-        }
+
+    lustReset() {
+        this.calcMaxLust()
+        this.stats.lust = this.stats.maxLust
+    }
 }

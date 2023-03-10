@@ -5,21 +5,17 @@ import { logger } from "@util/Logging";
 import { Character } from "@js/objects/Character";
 import _ from "lodash";
 
-Macro.add('enemyMacro', {
+Macro.add('findEnemy', {
     skipArgs: false,
     handler: function () {
-        let [minSize, maxSize, fightHeader] = this.args
+        // let [minSize, maxSize, fightHeader] = this.args
         
         let { player } = variables();
         let enemy = new Character({
-            baseStat: player.getAvgStatPoints(),
-            speciesId: _.random(0, species.length - 1),
-            sizeRange: [minSize, maxSize],
-            bodyTypeRange: [0, 4],
-            genderId: _.random(0,6)
+            defaultStat: 5
         })
 
-        variables().fightHeader = fightHeader
+        // variables().fightHeader = fightHeader
         variables().combat = true
         variables().enemy = enemy
         // checkWilling(player.skills, enemy)

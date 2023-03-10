@@ -2,3 +2,10 @@
 <h1>Landing</h1>
 
 Well, we made it here
+
+Character Name: $player._name
+Character Health: $player._stats.health
+
+<<button "Fight" "fight">>
+    <<findEnemy>>
+<</button>>

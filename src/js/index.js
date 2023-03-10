@@ -30,7 +30,7 @@ setup.ImagePath = "assets/";
 	// Config loading
 	Save.onLoad.add(function (save) {
 		logger('Loading...')
-		// loadGameData(save, version)
+		loadGameData(save, version)
 	})
 
 	// Config saving

@@ -8,16 +8,13 @@ export function saveGameData(saveData = {}) {
 }
 
 export function loadGameData(save, version) {
-    logger(save)
-    migrate(save, version)
+    // migrate(save, version)
 
-    _.each(save.state.history, ({ variables }) => {
-        hydrateClasses(variables)
-    })
+    hydrateClasses(_.last(save.state.history).variables)
 }
 
 function hydrateClasses(variables) {
-    variables.player = new Character(null, variables.player)
+    State.variables.player = new Character(variables.player, true)
     if (variables.enemy)
-        variables.enemy = new Character(null, variables.enemy)
+        State.variables.enemy = new Character(variables.enemy, true)
 }
